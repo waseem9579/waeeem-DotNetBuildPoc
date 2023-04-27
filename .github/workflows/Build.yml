@@ -24,10 +24,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish MyApp.csproj -c Release -o MyApplication-${github_sha}
+      run: dotnet publish MyApp.csproj -c Release -o MyApplication-${{github_sha}}
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: MyApplication-${github_sha}
-        path: MyApplication-${github_sha}/**
+        name: MyApplication-${{github_sha}}
+        path: MyApplication-${{github_sha}}/**
         if-no-files-found: error
