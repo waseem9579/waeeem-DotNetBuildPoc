@@ -24,10 +24,10 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
     - name: Publish
-      run: dotnet publish MyApp.csproj -c Release -o website
+      run: dotnet publish MyApp.csproj -c Release -o MyApplication 
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: website
-        path: website/**
+        name: MyApplication
+        path: MyApplication/**
         if-no-files-found: error
