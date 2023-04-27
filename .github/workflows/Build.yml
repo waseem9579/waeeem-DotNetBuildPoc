@@ -28,6 +28,6 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3
       with:
-        name: MyApplication-${GITHUB_SHA::7}
-        path: MyApplication-${GITHUB_SHA::7}/**
+        name: MyApplication-*
+        path: MyApplication-*/**
         if-no-files-found: error
